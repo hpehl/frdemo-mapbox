@@ -17,6 +17,6 @@ The service mocks the MapBox REST endpoint `/directions/v5/` using the profile `
 | [payload8.json](src/main/resources/payload8.json) |  28K |
 | [payload9.json](src/main/resources/payload9.json) | 460K |
 
-To use this service in the first responder demo backend, use the my fork at https://github.com/hpehl/first-responder-demo and specify the `MAPBOX_BASE_URL` system property, when you start EAP. The value specifies the base URL of the MapBox API mock, e.g. http://localhost:9123. 
+To use this service in the first responder demo backend, use my fork at https://github.com/hpehl/first-responder-demo and specify the `MAPBOX_BASE_URL` system property, when you start EAP. The value specifies the base URL of the MapBox API mock, e.g. http://localhost:9123. 
 
 The service is available as container at [Quay.io](https://quay.io/repository/hpehl/frdemo-mapbox): `quay.io/hpehl/frdemo-mapbox`
