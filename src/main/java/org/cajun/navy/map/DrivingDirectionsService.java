@@ -33,7 +33,7 @@ public class DrivingDirectionsService {
     public Response fakeDirections(@PathParam("coordinates") String coordinates) {
         try {
             int index = new Random().nextInt(PAYLOADS);
-            String payload = "/payload%d.json".formatted(index);
+            String payload = String.format("/payload%d.json", index);
             URL resource = getClass().getResource(payload);
             if (resource != null) {
                 String json = Files.readString(Paths.get(resource.toURI()));
