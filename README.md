@@ -19,4 +19,4 @@ The service mocks the MapBox REST endpoint `/directions/v5/` using the profile `
 
 To use the mock, you have to use the first responder demo fork at https://github.com/hpehl/first-responder-demo and specify the `MAPBOX_BASE_URL` system property, when starting EAP. The value specifies the base URL of the MapBox API mock, e.g. http://localhost:9123. 
 
-The service is also available as container at [Quay.io](https://quay.io/repository/hpehl/frdemo-mapbox): `quay.io/hpehl/frdemo-mapbox`
+The mock service is available as a container at [Quay.io](https://quay.io/repository/hpehl/frdemo-mapbox): `quay.io/hpehl/frdemo-mapbox`
