@@ -41,9 +41,11 @@ public class DrivingDirectionsService {
                 log.infof("MapBox request for: %s. Choosing %s: %s", coordinates, payload, bytes);
                 return Response.ok(json).build();
             } else {
+                log.errorf("Payload $s not found!");
                 return Response.status(Response.Status.NOT_FOUND).build();
             }
         } catch (Exception e) {
+            log.errorf(e, "Internal server error: %s", e.getMessage());
             return Response.status(Response.Status.INTERNAL_SERVER_ERROR).build();
         }
     }
