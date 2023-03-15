@@ -2,7 +2,7 @@
 
 Service to mock the [MapBox Directions API v5](https://www.mapbox.com/) used by the [First Responder Demo](https://github.com/wildfly-extras/first-responder-demo).
 
-The service mocks the MapBox REST endpoint `/directions/v5/` using the profile `mapbox/driving`. It returns one of 10 payload samples:
+The service mocks the MapBox REST endpoint `/directions/v5/` using the profile `mapbox/driving`. It randomly returns one of 10 payload samples:
 
 | Payload                                           | Size |
 |---------------------------------------------------|-----:|
