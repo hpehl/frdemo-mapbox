@@ -1,10 +1,11 @@
 package org.cajun.navy.map;
 
-import java.net.URL;
+import java.io.BufferedReader;
+import java.io.InputStream;
+import java.io.InputStreamReader;
 import java.nio.charset.Charset;
-import java.nio.file.Files;
-import java.nio.file.Paths;
 import java.util.Random;
+import java.util.stream.Collectors;
 
 import org.jboss.logging.Logger;
 
@@ -34,9 +35,10 @@ public class DrivingDirectionsService {
         try {
             int index = new Random().nextInt(PAYLOADS);
             String payload = String.format("/payload%d.json", index);
-            URL resource = getClass().getResource(payload);
-            if (resource != null) {
-                String json = Files.readString(Paths.get(resource.toURI()));
+            InputStream stream = getClass().getResourceAsStream(payload);
+            if (stream != null) {
+                String json = new BufferedReader(new InputStreamReader(stream))
+                        .lines().parallel().collect(Collectors.joining("\n"));
                 String bytes = humanReadableByteCount(json.getBytes(Charset.defaultCharset()).length, true);
                 log.infof("MapBox request for: %s. Choosing %s: %s", coordinates, payload, bytes);
                 return Response.ok(json).build();
