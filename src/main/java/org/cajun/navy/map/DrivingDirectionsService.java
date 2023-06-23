@@ -30,6 +30,12 @@ public class DrivingDirectionsService {
     Logger log;
 
     @GET
+    @Path("available")
+    public Response available() {
+        return Response.ok().build();
+    }
+
+    @GET
     @Path("{coordinates}")
     public Response fakeDirections(@PathParam("coordinates") String coordinates) {
         try {
